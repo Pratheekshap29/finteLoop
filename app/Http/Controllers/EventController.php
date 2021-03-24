@@ -15,8 +15,9 @@ class EventController extends Controller
     public function index()
     {
         //$events = Events::paginate(50);
-        $events=Events::all();
-            return view('events.index')->with('events',$events);
+        $events=Event::all();
+           // return view('events.index')->with('events',$events);
+           return $events;
     }
 
     /**
@@ -26,7 +27,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+       // return view('events.create');
     }
 
     /**
@@ -46,8 +47,8 @@ class EventController extends Controller
             'eventsimage' => 'string|required',
             'videolink' => 'string',
         ]);
-        $events=Events::create($data);
-            return redirect(route('events.index'));
+        $events=Event::create($data);
+           // return redirect(route('events.index'));
     }
 
     /**
@@ -70,7 +71,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //dd($events);
-        return view('events.edit',['events'=>$event]);
+      //  return view('events.edit',['events'=>$event]);
         
     }
 
@@ -81,11 +82,23 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request,$id)
     {
-        $events->update($request->all());
-        $events->save();
-        return redirect(route('events.index'));
+        // $events->update($request->all());
+        // $events->save();
+        // return redirect(route('events.index'));
+        $event=Event::find($id);
+        $data = $request->validate([
+            'eventsname' => 'string|required',
+            'eventstype' => 'string|required',
+            'description' => 'string|required',
+            'eventsdate' => 'date|required',
+            'eventsvenue' => 'string|required',
+            'eventsimage' => 'string|required',
+            'videolink' => 'string',
+        ]);
+        $event->update($data);
+        $event->save();
     }
 
     /**
@@ -94,9 +107,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
+        $event=Event::find($id);
         $event->delete();
-            return redirect(route('events.index'));
+        // $event->delete();
+        //     return redirect(route('events.index'));
     }
 }

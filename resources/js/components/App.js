@@ -9,10 +9,10 @@ function App() {
         <Router basename="/">
             <div>
                 <Link to="/app/home">Dashboard</Link>
-                <Link to="/app/event">Event</Link>
+                <Link to="/app/events">Event</Link>
                 <Link to="/app/members">Members</Link>
                 <Route exact path="/app/home" />
-                <Route exact path="/app/event" component={Events}/>
+                <Route exact path="/app/events" component={Events}/>
                 <Route exact path="/app/members" component={Members}/>
             </div>
         </Router>

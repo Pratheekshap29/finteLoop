@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_API } from "../../config";
 import { Button, Table } from "react-bootstrap";
-import Create from "./Shared/Create";
-import Update from "./Shared/Update";
+import Create from "./Members/Create";
+import Update from "./Members/Update";
 import { update } from "lodash";
 
 function Members() {
