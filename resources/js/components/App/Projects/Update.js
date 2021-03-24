@@ -6,21 +6,21 @@ import { BASE_API } from "../../../config";
 function Update(props) {
     const [formData, setformData] = useState({});
     useEffect(() => {
-        if(props.event) {
-            setformData(props.event)
+        if(props.project) {
+            setformData(props.project)
         }
-    }, [props.event])
+    }, [props.project])
     const submitForm = (e) => {
         e.preventDefault();
         // creates form data
-        console.log(formData);
-        axios.put(`${BASE_API}/events/${formData.id}`, formData).then((res) => {
+       // console.log(formData);
+        axios.put(`${BASE_API}/projects/${formData.id}`, formData).then((res) => {
             console.log(formData);
-            const currentEvent={
-                id: props.event.id,
+            const currentProject={
+                id: props.project.id,
                 ...formData,
             }
-            props.updateCurrentEvent(currentEvent);
+            props.updateCurrentProject(currentProject);
             props.onHide();
         })
         .catch(error=>{
@@ -47,27 +47,26 @@ function Update(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Create event</h4>
+                <h4>Create project</h4>
                 <Form id="form" onSubmit={submitForm}>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
-                            <Form.Label>Name</Form.Label>
+                            <Form.Label>Title</Form.Label>
                             <Form.Control
-                                type="name"
-                                name="eventsname"
-                                value={formData.eventsname}
+                                name="title"
+                                value={formData.title}
                                 onChange={handleChange}
-                                placeholder="Enter name"
+                                placeholder="Enter title"
                             />
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Label>Type</Form.Label>
+                            <Form.Label>Link</Form.Label>
                             <Form.Control
-                                placeholder="Type"
+                                placeholder="Link"
                                 onChange={handleChange}
-                                value={formData.eventstype}
-                                name="eventstype"
+                                value={formData.link}
+                                name="link"
                             />
                         </Form.Group>
                     </Form.Row>
@@ -83,45 +82,16 @@ function Update(props) {
                     </Form.Group>
 
                     <Form.Group controlId="formGridAddress2">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Pimage</Form.Label>
                         <Form.Control
-                            placeholder="Date"
-                            value={formData.eventsdate}
+                            placeholder="Image"
+                            value={formData.pimage}
                             onChange={handleChange}
-                            name="eventsdate"
+                            name="pimage"
                         />
                     </Form.Group>
 
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridCity">
-                            <Form.Label>Venue</Form.Label>
-                            <Form.Control
-                                placeholder="venue"
-                                value={formData.eventsvenue}
-                                onChange={handleChange}
-                                name="eventsvenue"
-                            />
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="formGridState">
-                            <Form.Label>Image</Form.Label>
-                            <Form.Control
-                                placeholder="Image"
-                                value={formData.eventsimage}
-                                onChange={handleChange}
-                                name="eventsimage"
-                            />
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridState">
-                            <Form.Label>Vedio Link</Form.Label>
-                            <Form.Control
-                                placeholder="Vedio link"
-                                value={formData.vediolink}
-                                onChange={handleChange}
-                                name="vediolink"
-                            />
-                        </Form.Group>
-                    </Form.Row>
+                    
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>

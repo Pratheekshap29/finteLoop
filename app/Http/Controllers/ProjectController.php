@@ -15,7 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects=Project::all();
-            return view('projects.index')->with('projects',$projects);
+        return $projects;
+          //  return view('projects.index')->with('projects',$projects);
     }
 
     /**
@@ -25,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        //return view('projects.create');
     }
 
     /**
@@ -46,7 +47,7 @@ class ProjectController extends Controller
            
          
             $projects=Project::create($data);
-            return redirect(route('projects.index'));
+           // return redirect(route('projects.index'));
     }
 
     /**
@@ -68,7 +69,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit',['projects' => $project]);
+        //return view('projects.edit',['projects' => $project]);
     }
 
     /**
@@ -78,11 +79,22 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request,$id)
     {
-        $project->update($request->all());
+        $project=Project::find($id);
+
+        $data = $request->validate([
+            
+            'title' => 'string|required',
+            'link' => 'string|required',
+            'description' => 'string|required',
+            'pimage' => 'string|required'
+        ]);
+
+
+        $project->update($data);
         $project->save();
-        return redirect(route('projects.index'));
+        //return redirect(route('projects.index'));
         
     }
 
@@ -92,9 +104,11 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
+        error_log("hi");
+        $project=Project::find($id);
         $project->delete();
-        return redirect(route('projects.index'))->with('message','Projects deleted successfully')->with('status','success');
+       // return redirect(route('projects.index'))->with('message','Projects deleted successfully')->with('status','success');
     }
 }
