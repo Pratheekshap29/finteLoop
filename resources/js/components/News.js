@@ -1,9 +1,10 @@
 import React from "react";
+import $ from "jquery";
 
 const News = () => {
     return (
         <section id="news">
-            <div className="holder ">
+            {/* <div className="holder ">
                 <ul id="ticker01">
                     <li>
                         <span>10/10/2007</span>
@@ -66,7 +67,7 @@ const News = () => {
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </section>
     );
 };

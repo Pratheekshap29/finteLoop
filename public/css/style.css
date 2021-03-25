@@ -3,6 +3,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #303030;
+    background-image: url("https://images.unsplash.com/photo-1528818955841-a7f1425131b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .white-heading{
+    color: white;
   }
   
   nav {
@@ -80,9 +88,7 @@ body {
     border-bottom: 0.6rem solid #303030;
   } */
   
-  .img {
-    background-image: url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80);
-  }
+ 
   
   
   
@@ -164,12 +170,12 @@ body {
   
   
   #events{
-      background-color: #7868e6;
+      /* background-color: #7868e6; */
   }
   .card{
       margin:auto;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      border-radius: 20px; 
+      /* border-radius: 20px;  */
       transition: 0.3s ease;
       cursor: pointer;
   
@@ -183,7 +189,7 @@ body {
   
     /*projects*/
     #projects{
-      background-color: #f1f6ff;
+      /* background-color: #f1f6ff; */
     }
     #news-slider{
         margin-top: 80px;
@@ -278,6 +284,9 @@ body {
         background: #3498db;
         text-decoration:none;
         color:#fff;
+    }
+    button.owl-prev{
+      color : white;
     }
     .owl-controls .owl-buttons{
         text-align:center;

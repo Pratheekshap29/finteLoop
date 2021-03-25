@@ -1,31 +1,31 @@
-//navbar
-const navHeight = $("nav#nav").height();
-console.log({navHeight})
-const $navGroup = $('nav .nav-group')
-const navOrigPadding = ($navGroup.innerWidth() - $navGroup.width())/2;
+// //navbar
+// const navHeight = $("nav#nav").height();
+// console.log({navHeight})
+// const $navGroup = $('nav .nav-group')
+// const navOrigPadding = ($navGroup.innerWidth() - $navGroup.width())/2;
 
-$('.hamburger').on('click', function() {
-  $('.menus.nav-group').toggleClass('show');
-})
+// $('.hamburger').on('click', function() {
+//   $('.menus.nav-group').toggleClass('show');
+// })
 
-const minNavPadding = 10;
-$('nav').css({'background-color': 'rgba(256, 256, 256, 0)'})
+// const minNavPadding = 10;
+// $('nav').css({'background-color': 'rgba(256, 256, 256, 0)'})
 
-$(window).scroll(function() {
-  const windowScroll = $(window).scrollTop()
-  if (windowScroll < navHeight) {
-    const padding = navOrigPadding - windowScroll/2
-    let newPadding = padding >= minNavPadding ? padding : minNavPadding;
-    newPadding = newPadding > navOrigPadding ? navOrigPadding : newPadding;
-    const opacity = 1-(newPadding-minNavPadding)/(navOrigPadding-minNavPadding);
-    const newOpacity = opacity >= 1 ? 1 : opacity;
-    $('nav').css({'background-color': `rgba(256, 256, 256, ${newOpacity})`});
-    $('nav .nav-group').css({padding: `${newPadding}px`})
-  }
-})
+// $(window).scroll(function() {
+//   const windowScroll = $(window).scrollTop()
+//   if (windowScroll < navHeight) {
+//     const padding = navOrigPadding - windowScroll/2
+//     let newPadding = padding >= minNavPadding ? padding : minNavPadding;
+//     newPadding = newPadding > navOrigPadding ? navOrigPadding : newPadding;
+//     const opacity = 1-(newPadding-minNavPadding)/(navOrigPadding-minNavPadding);
+//     const newOpacity = opacity >= 1 ? 1 : opacity;
+//     $('nav').css({'background-color': `rgba(256, 256, 256, ${newOpacity})`});
+//     $('nav .nav-group').css({padding: `${newPadding}px`})
+//   }
+// })
 
 
-// news
+// // news
 jQuery.fn.liScroll = function(settings) {
 	settings = jQuery.extend({
 		travelocity: 0.03
@@ -64,31 +64,31 @@ $(function(){
 });
 
 //carousel
-$(document).ready(function() {
-  $("#news-slider").owlCarousel({
-      items : 3,
-      itemsDesktop:[1199,3],
-      itemsDesktopSmall:[980,2],
-      itemsMobile : [600,1],
-      navigation:true,
-      navigationText:["",""],
-      pagination:true,
-      autoPlay:true
-  });
-});
+// $(document).ready(function() {
+//   $("#news-slider").owlCarousel({
+//       items : 3,
+//       itemsDesktop:[1199,3],
+//       itemsDesktopSmall:[980,2],
+//       itemsMobile : [600,1],
+//       navigation:true,
+//       navigationText:["",""],
+//       pagination:true,
+//       autoPlay:true
+//   });
+// });
 
 
-$(document).ready(function() {
-  $("#testimonial-slider").owlCarousel({
-    items: 3,
-    itemsDesktop:[1000,3],
-    itemsDesktopSmall:[979,2],
-    itemsTablet:[768, 2],
-    itemsMobile:[650, 1],
-    pagination: true,
-    autoPlay: true
-  });
-});
+// $(document).ready(function() {
+//   $("#testimonial-slider").owlCarousel({
+//     items: 3,
+//     itemsDesktop:[1000,3],
+//     itemsDesktopSmall:[979,2],
+//     itemsTablet:[768, 2],
+//     itemsMobile:[650, 1],
+//     pagination: true,
+//     autoPlay: true
+//   });
+// });
 
 // (function () {
 //   "use strict";

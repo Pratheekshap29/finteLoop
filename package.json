@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "chart.js": "^2.9.4",
+        "jquery": "^3.6.0",
         "react-bootstrap": "^1.5.2",
         "react-chartjs-2": "^2.11.1",
         "react-crud-table": "^0.3.0",

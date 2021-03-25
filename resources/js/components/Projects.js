@@ -89,7 +89,7 @@ function Projects() {
         <section id="projects">
     <div className="responsive">
       <div className="container-fluid">
-        <h2 className="text-center">Projects</h2>
+        <h2 className="text-center white-heading">Projects</h2>
         <div className="row">
           <div className="col-md-12">
             {/* <div id="news-slider" className="owl-carousel"> */}
