@@ -3,6 +3,14 @@ import Member from './Member'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+// const [members, setMembers] = useState([]);
+// useEffect(() => {
+//     axios.get(`${BASE_API}/members`).then((res) => {
+//         setMembers(res.data);
+//         console.log(members);
+//     });
+// }, []);
 const Members = () => {
 const membArr=[
     {

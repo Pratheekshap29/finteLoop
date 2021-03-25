@@ -24,10 +24,14 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "chart.js": "^2.9.4",
         "react-bootstrap": "^1.5.2",
+        "react-chartjs-2": "^2.11.1",
         "react-crud-table": "^0.3.0",
         "react-owl-carousel": "^2.3.3",
         "react-router-dom": "^5.2.0",
-        "require": "^2.4.20"
+        "require": "^2.4.20",
+        "waypoints": "^4.0.1",
+        "web-vitals": "^1.1.1"
     }
 }
