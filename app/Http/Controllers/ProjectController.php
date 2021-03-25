@@ -60,6 +60,7 @@ class ProjectController extends Controller
            
          
             $projects=Project::create($data);
+            return $projects->id;
            // return redirect(route('projects.index'));
     }
 

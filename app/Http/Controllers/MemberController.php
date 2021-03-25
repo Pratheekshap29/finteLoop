@@ -62,6 +62,9 @@ class MemberController extends Controller
            
          
            $members=Member::create($data);
+           return $members->id;
+        //    return Response::json(array('success' => true, 'id' => $data->id), 200);
+        //    return response()->json(array('success' => true, 'id' => $data->id), 200);
             //return redirect(route('members.index'));
     }
 

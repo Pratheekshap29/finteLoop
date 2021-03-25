@@ -9,10 +9,13 @@ function Create(props) {
     const submitForm = (e) => {
         e.preventDefault();
         // creates form data
-        console.log(formData);
+        //console.log(formData);
         axios.post(`${BASE_API}/newss`,formData).then((res) => {
-            console.log("post success");
-            props.sendDataToParent(formData);
+            const dataToSend={
+                id: res.data,
+                ...formData,
+            };
+            props.sendDataToParent(dataToSend);
             props.onHide();
         }).catch(error=>{
             console.log(error);

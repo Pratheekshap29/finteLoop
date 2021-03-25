@@ -68,6 +68,7 @@ class NewsController extends Controller
        // error_log($data);
            
             $news=News::create($data);
+            return $news->id;
             //return redirect(route('news.index'));
     }
 

@@ -61,6 +61,7 @@ class EventController extends Controller
             'videolink' => 'string',
         ]);
         $events=Event::create($data);
+        return $events->id;
            // return redirect(route('events.index'));
     }
 

@@ -11,8 +11,11 @@ function Create(props) {
         // creates form data
 
         axios.post(`${BASE_API}/events`,formData).then((res) => {
-            console.log("post success");
-            props.sendDataToParent(formData);
+            const dataToSend={
+                id: res.data,
+                ...formData,
+            };
+            props.sendDataToParent(dataToSend);
             props.onHide();
         }).catch(error=>{
             console.log(error);
