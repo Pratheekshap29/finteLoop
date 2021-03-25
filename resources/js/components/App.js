@@ -8,6 +8,7 @@ import Newss from './App/Newss';
 
 function App() {
     return (
+        <div className="container">
         <Router basename="/">
             <div>
                 <Link to="/app/home">Dashboard</Link>
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/app/newss" component={Newss}/>
             </div>
         </Router>
+    </div>
         // <div className="container">
         //     <div className="row justify-content-center">
         //         <div className="col-md-8">

@@ -48,6 +48,7 @@ function Newss() {
         container: { margin: "auto", width: "fit-content" },
     };
     return (
+        <div className="container">
         <div style={styles.container}>
             <Button variant="primary" onClick={() => setModalCreateShow(true)}>
                 Create News
@@ -94,6 +95,7 @@ function Newss() {
                     ))}
                 </tbody>
             </Table>
+        </div>
         </div>
     );
 }

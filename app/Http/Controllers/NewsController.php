@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -24,6 +33,11 @@ class NewsController extends Controller
         //}
         return $news;
     }
+    public function view()
+    {
+        return view('home');
+    }
+
 
     /**
      * Show the form for creating a new resource.

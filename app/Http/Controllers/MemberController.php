@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,6 +28,10 @@ class MemberController extends Controller
         return $members;
     }
 
+    public function view()
+    {
+        return view('home');
+    }
     /**
      * Show the form for creating a new resource.
      *

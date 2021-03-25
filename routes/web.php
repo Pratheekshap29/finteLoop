@@ -24,7 +24,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+  Route::get('/app/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Route::get('/app/members', [App\Http\Controllers\MemberController::class, 'view']);
+  Route::get('/app/events', [App\Http\Controllers\EventController::class, 'view']);
+  Route::get('/app/projects', [App\Http\Controllers\ProjectController::class, 'view']);
+  Route::get('/app/newss', [App\Http\Controllers\NewsController::class, 'view']);
 
 Route::get('/members', [App\Http\Controllers\MemberController::class, 'index']);
 
@@ -60,5 +64,5 @@ Route::delete('/newss/delete/{id}', [App\Http\Controllers\NewsController::class,
 Route::any('/newss/{id}', [NewsController::class, 'update']);
 
 Route::get('/app/{path?}', function(){
-    return view('home'); //This view is supposed to have the react app above
+    //return view('home'); //This view is supposed to have the react app above
 });
