@@ -20,8 +20,9 @@ class NewsController extends Controller
         //     return $news;
         // }
         // else{
-            return view('news.index')->with('news',$news);
+            //return view('news.index')->with('news',$news);
         //}
+        return $news;
     }
 
     /**
@@ -31,7 +32,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('news.create');
+        //return view('news.create');
     }
 
     /**
@@ -42,6 +43,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+        //error_log("hi");
         $data = $request->validate([
             
             'newshead' => 'string|required',
@@ -49,9 +51,10 @@ class NewsController extends Controller
             'newdate' => 'date|required',
             'flyer' => 'string|required'
         ]);
+       // error_log($data);
            
             $news=News::create($data);
-            return redirect(route('news.index'));
+            //return redirect(route('news.index'));
     }
 
     /**
@@ -62,12 +65,12 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        if ($request->wantsJson()) {
-            return $news;
-        }
-        else{
-            return redirect()->route('news.show', [$id]);
-        }
+        // if ($request->wantsJson()) {
+        //     return $news;
+        // }
+        // else{
+        //     return redirect()->route('news.show', [$id]);
+        // }
     }
 
     /**
@@ -79,7 +82,7 @@ class NewsController extends Controller
     public function edit(News $news)
     {
         //dd($news);
-        return view('news.edit',['news' => $news]);
+       // return view('news.edit',['news' => $news]);
     }
 
     /**
@@ -89,11 +92,22 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
-        $news->update($request->all());
+        $news=News::find($id);
+
+        $data = $request->validate([
+            
+            'newshead' => 'string|required',
+            'description' => 'string|required',
+            'newdate' => 'date|required',
+            'flyer' => 'string|required'
+        ]);
+
+
+        $news->update($data);
         $news->save();
-        return redirect(route('news.index'));
+        //return redirect(route('news.index'));
    // }
     }
 
@@ -103,10 +117,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
         // $x=News::findorfail($news);
        // $delete = News::where('id', '=', $news)->delete();
+       $news=News::find($id);
        $news->delete();
     
         
@@ -120,6 +135,6 @@ class NewsController extends Controller
        //         $request->session()->flash('message','An error occured!!!'); 
        //     }
        //     // 
-           return redirect(route('news.index'))->with('message','News deleted succesffuly')->with('status','success');
+          // return redirect(route('news.index'))->with('message','News deleted succesffuly')->with('status','success');
     }
 }

@@ -106,7 +106,7 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        error_log("hi");
+        //error_log("hi");
         $project=Project::find($id);
         $project->delete();
        // return redirect(route('projects.index'))->with('message','Projects deleted successfully')->with('status','success');

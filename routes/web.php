@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\NewsController;
 
 
 /*
@@ -49,6 +50,14 @@ Route::post('/projects', [App\Http\Controllers\ProjectController::class, 'store'
 Route::delete('/projects/delete/{id}', [App\Http\Controllers\ProjectController::class, 'destroy']);
 //Route::('/members/{id}', [App\Http\Controllers\MemberController::class, 'edit']);
 Route::any('/projects/{id}', [ProjectController::class, 'update']);
+
+Route::get('/newss', [App\Http\Controllers\NewsController::class, 'index']);
+
+Route::post('/newss', [App\Http\Controllers\NewsController::class, 'store']);
+
+Route::delete('/newss/delete/{id}', [App\Http\Controllers\NewsController::class, 'destroy']);
+//Route::('/members/{id}', [App\Http\Controllers\MemberController::class, 'edit']);
+Route::any('/newss/{id}', [NewsController::class, 'update']);
 
 Route::get('/app/{path?}', function(){
     return view('home'); //This view is supposed to have the react app above
