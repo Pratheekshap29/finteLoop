@@ -30,7 +30,7 @@ Auth::routes();
   Route::get('/app/projects', [App\Http\Controllers\ProjectController::class, 'view']);
   Route::get('/app/newss', [App\Http\Controllers\NewsController::class, 'view']);
 
-Route::get('/members', [App\Http\Controllers\MemberController::class, 'index']);
+Route::get('/members', [App\Http\Controllers\WelcomeController::class, 'membersFunc']);
 
 Route::post('/members', [App\Http\Controllers\MemberController::class, 'store']);
 
@@ -38,7 +38,7 @@ Route::delete('/members/delete/{id}', [App\Http\Controllers\MemberController::cl
 //Route::('/members/{id}', [App\Http\Controllers\MemberController::class, 'edit']);
 Route::any('/members/{id}', [MemberController::class, 'update']);
 
-Route::get('/events', [App\Http\Controllers\EventController::class, 'index']);
+Route::get('/events', [App\Http\Controllers\WelcomeController::class, 'eventsFunc']);
 
 Route::post('/events', [App\Http\Controllers\EventController::class, 'store']);
 
@@ -47,7 +47,7 @@ Route::delete('/events/delete/{id}', [App\Http\Controllers\EventController::clas
 Route::any('/events/{id}', [EventController::class, 'update']);
 
 
-Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index']);
+Route::get('/projects', [App\Http\Controllers\WelcomeController::class, 'projectsFunc']);
 
 Route::post('/projects', [App\Http\Controllers\ProjectController::class, 'store']);
 
@@ -55,7 +55,7 @@ Route::delete('/projects/delete/{id}', [App\Http\Controllers\ProjectController::
 //Route::('/members/{id}', [App\Http\Controllers\MemberController::class, 'edit']);
 Route::any('/projects/{id}', [ProjectController::class, 'update']);
 
-Route::get('/newss', [App\Http\Controllers\NewsController::class, 'index']);
+Route::get('/newss', [App\Http\Controllers\WelcomeController::class, 'newsFunc']);
 
 Route::post('/newss', [App\Http\Controllers\NewsController::class, 'store']);
 

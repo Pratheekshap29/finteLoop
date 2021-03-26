@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { BASE_API } from "../config";
+import axios from "axios";
 import ProjectSlide from './ProjectSlide';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -6,62 +8,70 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function Projects() {
 
-    const projArr=[
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-        {
-            title: 'Proj Title',
-            desc: 'Proj Desc',
-            imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
-            link: {
-                title: 'link title',
-                href: '/about'
-            }
-        },
-    ]
+    const [projArr, setProjects] = useState([]);
+    useEffect(() => {
+        axios.get(`${BASE_API}/projects`).then((res) => {
+            setProjects(res.data);
+            console.log(res.data);
+        });
+    }, []);
+
+    // const projArr=[
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    //     {
+    //         title: 'Proj Title',
+    //         desc: 'Proj Desc',
+    //         imglink:'https://images.unsplash.com/photo-1596265371388-43edbaadab94?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=501',
+    //         link: {
+    //             title: 'link title',
+    //             href: '/about'
+    //         }
+    //     },
+    // ]
     const responsive ={
         // breakpoint from 0 up
         0 : {
@@ -93,12 +103,12 @@ function Projects() {
         <div className="row">
           <div className="col-md-12">
             {/* <div id="news-slider" className="owl-carousel"> */}
-            <OwlCarousel responsive={responsive} className='owl-theme' id="news-slider" loop margin={10} nav>
+            {projArr.length &&<OwlCarousel responsive={responsive} className='owl-theme' id="news-slider" loop margin={10} nav>
              {projArr.map((proj,index)=>(
                 <ProjectSlide key={index} data={proj}/>
              ))}
               {/* </div> */}
-              </OwlCarousel>
+              </OwlCarousel>}
           </div>
         </div>
       </div>
