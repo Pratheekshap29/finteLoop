@@ -51,7 +51,7 @@ function Events() {
     };
     return (
         <div style={styles.container}>
-            <Button variant="primary" onClick={() => setModalCreateShow(true)}>
+            <Button variant="dark" onClick={() => setModalCreateShow(true)}>
                 Create Events
             </Button>
             <Create
@@ -91,10 +91,10 @@ function Events() {
                             <td>{event.eventsimage}</td>
                             <td>{event.videolink}</td>
                             <td>
-                                <Button onClick={() => updateEvent(event)}>
+                                <Button variant="dark" onClick={() => updateEvent(event)}>
                                     Update
                                 </Button>
-                                <Button onClick={() => deleteEvent(event)}>
+                                <Button variant="dark" onClick={() => deleteEvent(event)}>
                                     Delete
                                 </Button>
                             </td>

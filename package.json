@@ -24,13 +24,17 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "animejs": "^3.2.1",
         "chart.js": "^2.9.4",
+        "gsap": "^3.6.1",
         "jquery": "^3.6.0",
         "react-bootstrap": "^1.5.2",
         "react-chartjs-2": "^2.11.1",
         "react-crud-table": "^0.3.0",
+        "react-gsap": "^3.1.0",
         "react-owl-carousel": "^2.3.3",
         "react-router-dom": "^5.2.0",
+        "react-spring": "^9.0.0",
         "require": "^2.4.20",
         "waypoints": "^4.0.1",
         "web-vitals": "^1.1.1"

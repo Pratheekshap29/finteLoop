@@ -22,6 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/AllEvents', function () {
+  return view('all');
+});
+Route::get('/AllProjects', function () {
+  return view('all');
+});
+Route::get('/AllNews', function () {
+  return view('all');
+});
+
+
 Auth::routes();
 
   Route::get('/app/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

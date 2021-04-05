@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 function CardItem({data}) {
     return (
@@ -11,6 +12,8 @@ function CardItem({data}) {
             </div>
             <div className="card-body">
               <a href="#" className="card-link">Know more</a>
+
+              
             </div>
           </div>
     </div>

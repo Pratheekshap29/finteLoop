@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+     <script src="{{asset('js/index.js')}}"></script> 
+
     {{-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.gcmingati.net/wordpress/wp-content/lab/jquery/newsticker/jq-liscroll/jquery.li-scroller.1.0.js"></script> --}}
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> --}}
@@ -30,7 +33,7 @@
   </div>
     
     
-    {{-- <script src="{{asset('js/index.js')}}"></script>  --}}
+   
 </body>
 </html>
 

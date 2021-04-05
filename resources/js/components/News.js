@@ -1,9 +1,34 @@
-import React from "react";
-import $ from "jquery";
+import React, { useEffect, useState } from "react";
+// import $ from "jquery";
+import axios from 'axios';
+import { BASE_API } from "../config";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 const News = () => {
+
+    const [newArr, setNews] = useState([]);
+    useEffect(() => {
+        axios.get(`${BASE_API}/newss`).then((res) => {
+            setNews(res.data);
+            console.log(res.data);
+        });
+    }, []);
     return (
         <section id="news">
+            <h2 className="white-heading text-center">News</h2>
+            
+
+<div className="news magenta">
+	<span>Latest News</span>
+	<ul>
+    {newArr.map((news, index) => (
+            
+            <li><a href="/AllNews">{news.newshead}</a></li>
+        ))}
+		
+		
+	</ul>
+</div>
             {/* <div className="holder ">
                 <ul id="ticker01">
                     <li>

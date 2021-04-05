@@ -13,5 +13,7 @@ require('./bootstrap');
  */
 
 require('./components/App');
+
+require('./components/All');
 require('./components/Index');
 

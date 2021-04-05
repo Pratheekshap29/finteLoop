@@ -11,7 +11,6 @@ function App() {
     return (
         <div className="container">
             
-
             <Router basename="/">
             <div className="side-bar">
             <div className="menu">

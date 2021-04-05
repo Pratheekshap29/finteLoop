@@ -4,10 +4,10 @@ import { BASE_API } from "../config";
 import CardItem from './CardItem';
 
 function Events() {
-    const [cardArr, setMembers] = useState([]);
+    const [cardArr, setEvents] = useState([]);
     useEffect(() => {
         axios.get(`${BASE_API}/events`).then((res) => {
-            setMembers(res.data);
+            setEvents(res.data);
             console.log(res.data);
         });
     }, []);
