@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_API } from "../../config";
 import { Button, Table } from "react-bootstrap";
-import Create from "./Newss/Create";
+// import Create from "./Newss/Create";
 import Update from "./Newss/Update";
 import { update } from "lodash";
 
@@ -50,14 +50,14 @@ function Newss() {
     return (
         <div className="container">
         <div style={styles.container}>
-            <Button variant="primary" onClick={() => setModalCreateShow(true)}>
+            {/* <Button variant="primary" onClick={() => setModalCreateShow(true)}>
                 Create News
             </Button>
             <Create
                 show={modalCreateShow}
                 sendDataToParent={getData}
                 onHide={() => setModalCreateShow(false)}
-            />
+            /> */}
             <Update
                 show={!!modalUpdateShow}
                 news={modalUpdateShow}

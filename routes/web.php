@@ -35,11 +35,19 @@ Route::get('/AllNews', function () {
 
 Auth::routes();
 
-  Route::get('/app/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- Route::get('/app/members', [App\Http\Controllers\MemberController::class, 'view']);
+  Route::get('/app/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
   Route::get('/app/events', [App\Http\Controllers\EventController::class, 'view']);
+  Route::get('/app/events/add', [App\Http\Controllers\EventController::class, 'view']);
+
   Route::get('/app/projects', [App\Http\Controllers\ProjectController::class, 'view']);
+  Route::get('/app/projects/add', [App\Http\Controllers\ProjectController::class, 'view']);
+
   Route::get('/app/newss', [App\Http\Controllers\NewsController::class, 'view']);
+  Route::get('/app/newss/add', [App\Http\Controllers\NewsController::class, 'view']);
+
+  Route::get('/app/members', [App\Http\Controllers\MemberController::class, 'view']);
+  Route::get('/app/members/add', [App\Http\Controllers\MemberController::class, 'view']);
 
 Route::get('/members', [App\Http\Controllers\WelcomeController::class, 'membersFunc']);
 

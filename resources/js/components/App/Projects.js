@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_API } from "../../config";
 import { Button, Table } from "react-bootstrap";
-import Create from "./Projects/Create";
+// import Create from "./Projects/Create";
 import Update from "./Projects/Update";
 import { update } from "lodash";
 
@@ -52,14 +52,14 @@ function Projects() {
     };
     return (
         <div style={styles.container}>
-            <Button variant="primary" onClick={() => setModalCreateShow(true)}>
+            {/* <Button variant="primary" onClick={() => setModalCreateShow(true)}>
                 Create Project
-            </Button>
-            <Create
+            </Button> */}
+            {/* <Create
                 show={modalCreateShow}
                 sendDataToParent={getData}
                 onHide={() => setModalCreateShow(false)}
-            />
+            /> */}
             <Update
                 show={!!modalUpdateShow}
                 project={modalUpdateShow}

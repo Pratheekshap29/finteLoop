@@ -4,6 +4,15 @@ import { Button, Modal, Form, Col } from "react-bootstrap";
 import axios from "axios";
 import { BASE_API } from "../../../config";
 
+import {
+    CContainer,
+     CCol,
+     CCard,
+     CCardBody,
+     CCardHeader,
+     CRow
+   } from '@coreui/react'
+
 function Create(props) {
     const [formData, setformData] = useState({});
     const submitForm = (e) => {
@@ -30,20 +39,30 @@ function Create(props) {
         setformData(newFormData);
     };
     return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <h4>Create News</h4>
-                <Form id="form" onSubmit={submitForm}>
+        // <Modal
+        //     {...props}
+        //     size="lg"
+        //     aria-labelledby="contained-modal-title-vcenter"
+        //     centered
+        // >
+        //     <Modal.Header closeButton>
+        //         <Modal.Title id="contained-modal-title-vcenter">
+        //             Modal heading
+        //         </Modal.Title>
+        //     </Modal.Header>
+        //     <Modal.Body>
+
+        <CContainer fluid>
+        <CRow>
+          <CCol sm="12">
+          
+       
+          <CCard>
+          <CCardHeader>
+          <h4>Create News</h4>
+            </CCardHeader>
+            <CCardBody>
+            <Form id="form" onSubmit={submitForm}>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>News Head</Form.Label>
@@ -88,11 +107,21 @@ function Create(props) {
                         Submit
                     </Button>
                 </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-        </Modal>
+            </CCardBody>
+            
+          </CCard>  
+  
+          </CCol>
+        </CRow>
+      </CContainer>
+
+                
+               
+        //     </Modal.Body>
+        //     <Modal.Footer>
+        //         <Button onClick={props.onHide}>Close</Button>
+        //     </Modal.Footer>
+        // </Modal>
     );
 }
 

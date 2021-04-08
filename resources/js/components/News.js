@@ -1,10 +1,40 @@
 import React, { useEffect, useState } from "react";
 // import $ from "jquery";
 import axios from 'axios';
+
 import { BASE_API } from "../config";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
+
+import {
+    CContainer,
+     CCol,
+     CCard,
+     CCardBody,
+     CCardHeader,
+     CRow
+   } from '@coreui/react'
+
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 const News = () => {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        cssEase: "linear"
+      };
 
     const [newArr, setNews] = useState([]);
     useEffect(() => {
@@ -17,8 +47,27 @@ const News = () => {
         <section id="news">
             <h2 className="white-heading text-center">News</h2>
             
+            <div>
+        <Slider {...settings}>
 
-<div className="news magenta">
+        {newArr.map((news, index) => (
+
+            <div>
+            <CCard className="m-4">
+
+            <CCardBody>
+            <a href="/AllNews">{news.newshead}</a>
+            </CCardBody>
+
+            </CCard>
+            </div>
+        ))}
+         
+          
+        </Slider>
+      </div>
+
+{/* <div className="news magenta">
 	<span>Latest News</span>
 	<ul>
     {newArr.map((news, index) => (
@@ -28,7 +77,7 @@ const News = () => {
 		
 		
 	</ul>
-</div>
+</div> */}
             {/* <div className="holder ">
                 <ul id="ticker01">
                     <li>

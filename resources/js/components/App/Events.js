@@ -2,13 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_API } from "../../config";
 import { Button, Table } from "react-bootstrap";
-import Create from "./Events/Create";
+// import Create from "./Events/Create";
 import Update from "./Events/Update";
 import { update } from "lodash";
 
+import {
+    CContainer,
+     CCol,
+     CCard,
+     CCardBody,
+     CCardHeader,
+     CRow
+   } from '@coreui/react'
+
 function Events() {
     const [events, setEvents] = useState([]);
-    const [modalCreateShow, setModalCreateShow] = useState(false);
+    // const [modalCreateShow, setModalCreateShow] = useState(false);
     const [modalUpdateShow, setModalUpdateShow] = useState(false);
     useEffect(() => {
         axios.get(`${BASE_API}/events`).then((res) => {
@@ -51,21 +60,32 @@ function Events() {
     };
     return (
         <div style={styles.container}>
-            <Button variant="dark" onClick={() => setModalCreateShow(true)}>
+            {/* <Button variant="dark" onClick={() => setModalCreateShow(true)}>
                 Create Events
             </Button>
             <Create
                 show={modalCreateShow}
                 sendDataToParent={getData}
                 onHide={() => setModalCreateShow(false)}
-            />
+            /> */}
             <Update
                 show={!!modalUpdateShow}
                 event={modalUpdateShow}
                 updateCurrentEvent={updateCurrentEvent}
                 onHide={() => setModalUpdateShow(false)}
             />
-            <Table striped bordered hover>
+
+{/* <CContainer fluid>
+      <CRow>
+        <CCol sm="12">
+        
+     
+        <CCard>
+          <CCardHeader>
+          <h4>Create event</h4>
+          </CCardHeader>
+          <CCardBody> */}
+          <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -102,6 +122,16 @@ function Events() {
                     ))}
                 </tbody>
             </Table>
+          {/* </CCardBody>
+          
+        </CCard>  
+
+        </CCol>
+      </CRow>
+    </CContainer> */}
+
+
+           
         </div>
     );
 }

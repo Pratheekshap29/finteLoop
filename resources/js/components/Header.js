@@ -38,13 +38,14 @@ function Header() {
 
     return (
         <nav id="nav" ref={ref}>
-            <div className="brand nav-group">Brand</div>
+            
             <div className="menus nav-group" style={{top: showDropdown?0:'-200vh'}}>
+            <div className="brand nav-group">Brand</div>
                 <div className="hamburger" onClick={toggleDropdown}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                 </div>
-                <a className="menu-item" href="#news">
+                <a className="menu-item ml-auto " href="#news">
                     News
                 </a>
                 <a className="menu-item" href="#projects">

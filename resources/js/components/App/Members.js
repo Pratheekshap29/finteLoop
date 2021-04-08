@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_API } from "../../config";
 import { Button, Table } from "react-bootstrap";
-import Create from "./Members/Create";
+// import Create from "./Members/Create";
 import Update from "./Members/Update";
 import { update } from "lodash";
 
@@ -49,14 +49,14 @@ function Members() {
     };
     return (
         <div style={styles.container}>
-            <Button variant="primary" onClick={() => setModalCreateShow(true)}>
+            {/* <Button variant="primary" onClick={() => setModalCreateShow(true)}>
                 Create Member
             </Button>
             <Create
                 show={modalCreateShow}
                 sendDataToParent={getData}
                 onHide={() => setModalCreateShow(false)}
-            />
+            /> */}
             <Update
                 show={!!modalUpdateShow}
                 member={modalUpdateShow}
